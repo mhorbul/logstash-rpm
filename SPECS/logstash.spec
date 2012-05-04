@@ -1,5 +1,5 @@
 %define debug_package %{nil}
-%define base_install_dir /opt/{%name}
+%define base_install_dir /opt/%{name}
 
 Name:           logstash
 Version:        1.1.0.1
@@ -27,7 +27,7 @@ Requires(pre):  shadow-utils
 Logstash is a tool for managing events and logs
 
 %prep
-%setup -q -n %{name}-%{version}
+true
 
 %build
 true
@@ -85,7 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)
-%dir %{base_install_dir
+%dir %{base_install_dir}
 %dir %{base_install_dir}/plugins
 %dir %{_sysconfdir}/patterns
 
