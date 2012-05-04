@@ -17,7 +17,7 @@
 
 LOGSTASH_HOME=/opt/logstash
 LOGSTASH_USER=logstash
-DAEMON=${LOGSTASH_HOME}/bin/logstash-wrapper
+DAEMON=${LOGSTASH_HOME}/bin/logstash
 
 NAME=$(basename $0)
 SERVICE=agent
