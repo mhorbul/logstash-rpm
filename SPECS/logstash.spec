@@ -35,6 +35,9 @@ true
 %install
 rm -rf $RPM_BUILD_ROOT
 
+%{__mkdir} -p %{buildroot}%{base_install_dir}/lib
+%{__install} -m 755 %{SOURCE0} %{buildroot}%{base_install_dir}/lib/
+
 %{__mkdir} -p %{buildroot}%{base_install_dir}/bin
 %{__install} -m 755 %{SOURCE4} %{buildroot}%{base_install_dir}/bin/logstash
 
@@ -87,6 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %dir %{base_install_dir}
 %dir %{base_install_dir}/plugins
+%dir %{base_install_dir}/lib
 %dir %{_sysconfdir}/patterns
 
 %{_sysconfdir}/rc.d/init.d/logstash
