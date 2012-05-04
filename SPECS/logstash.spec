@@ -36,7 +36,7 @@ true
 rm -rf $RPM_BUILD_ROOT
 
 %{__mkdir} -p %{buildroot}%{base_install_dir}/bin
-%{__install} -m 644 %{SOURCE4} %{buildroot}%{base_install_dir}/bin/logstash
+%{__install} -m 755 %{SOURCE4} %{buildroot}%{base_install_dir}/bin/logstash
 
 # config
 %{__mkdir} -p %{buildroot}%{_sysconfdir}/logstash/conf.d
@@ -54,7 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__mkdir} -p %{buildroot}%{_sysconfdir}/rc.d/init.d
 %{__mkdir} -p %{buildroot}%{_sysconfdir}/sysconfig
 %{__install} -m 755 %{SOURCE1} %{buildroot}%{_sysconfdir}/rc.d/init.d/logstash
-%{__install} -m 755 %{SOURCE3} %{buildroot}%{_sysconfdir}/sysconfig/logstash
+%{__install} -m 644 %{SOURCE3} %{buildroot}%{_sysconfdir}/sysconfig/logstash
 
 %{__mkdir} -p %{buildroot}%{_localstatedir}/run/logstash
 %{__mkdir} -p %{buildroot}%{_localstatedir}/lock/subsys/logstash
