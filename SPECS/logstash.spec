@@ -90,7 +90,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %dir %{base_install_dir}
 %dir %{base_install_dir}/plugins
-%dir %{base_install_dir}/lib
 %dir %{_sysconfdir}/patterns
 
 %{_sysconfdir}/rc.d/init.d/logstash
@@ -99,6 +98,7 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %{_sysconfdir}/sysconfig/logstash
 %config(noreplace) %{_sysconfdir}/logstash/conf.d/logstash.conf
 
+%{base_install_dir}/lib/*
 %{base_install_dir}/bin/*
 
 #%doc LICENSE.txt  NOTICE.txt  README.textile
