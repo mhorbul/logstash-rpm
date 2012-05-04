@@ -1,3 +1,6 @@
+# do not repack jar files
+%define __jar_repack %{nil}
+# do not build debug packages
 %define debug_package %{nil}
 %define base_install_dir /opt/%{name}
 
