@@ -20,6 +20,7 @@ LOGSTASH_USER=logstash
 DAEMON=${LOGSTASH_HOME}/bin/logstash-wrapper
 
 NAME=$(basename $0)
+SERVICE=agent
 
 PID_FILE=${PIDFILE:-/var/run/${NAME}/${NAME}.pid}
 LOCK_FILE=${LOCKFILE:-/var/lock/subsys/${NAME}}
