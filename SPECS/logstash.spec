@@ -65,6 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__mkdir} -p %{buildroot}%{_localstatedir}/run/logstash
 %{__mkdir} -p %{buildroot}%{_localstatedir}/lock/subsys/logstash
+%{__mkdir} -p %{buildroot}%{base_install_dir}/tmp
 
 %pre
 # create logstash group
@@ -108,6 +109,7 @@ rm -rf $RPM_BUILD_ROOT
 #%doc LICENSE.txt  NOTICE.txt  README.textile
 %defattr(-,logstash,logstash,-)
 %{_localstatedir}/run/logstash
+%{base_install_dir}/tmp
 %dir %{_localstatedir}/log/logstash
 
 
