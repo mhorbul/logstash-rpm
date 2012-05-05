@@ -1,4 +1,4 @@
 #LOGSTASH_LOGFILE=/var/log/logstash/logstash.log
 #LOGSTASH_PATH_CONF=/etc/logstash/conf.d
 #LOGSTASH_PATH_PLUGINS=/opt/logstash/plugins
-#LOGSTASH_JAVA_OPTS=
+#LOGSTASH_JAVA_OPTS="-Djava.io.tmpdir=/opt/logstash/tmp"
