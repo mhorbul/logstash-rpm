@@ -1,7 +1,5 @@
 #!/bin/sh
 
-echo $0
-
 SCRIPT=$0
 LOGSTASH_HOME=$(dirname "$SCRIPT")/..
 
