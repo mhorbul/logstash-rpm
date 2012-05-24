@@ -1,3 +1,4 @@
+#LOGSTASH_USER=root
 #LOGSTASH_LOGFILE=/var/log/logstash/logstash.log
 #LOGSTASH_PATH_CONF=/etc/logstash/conf.d
 #LOGSTASH_PATH_PLUGINS=/opt/logstash/plugins
