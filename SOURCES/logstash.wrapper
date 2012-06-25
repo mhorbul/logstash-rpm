@@ -40,10 +40,10 @@ function run_service() {
   logfile=$5
 
   if [ "x$logfile" == "x" ]; then
-    exec "$JAVA" $JAVA_OPTS -jar $LOGSTASH_JAR $service -f "$config" -p "$pluginpath"
+    exec "$JAVA" $JAVA_OPTS -jar $LOGSTASH_JAR $service -f "$config" -p "$pluginpath" "$verbose"
     rs=$?
   else
-    exec "$JAVA" $JAVA_OPTS -jar $LOGSTASH_JAR $service -f "$config" -l "$logfile" -p "$pluginpath" 2>&1 >> $logfile &
+    exec "$JAVA" $JAVA_OPTS -jar $LOGSTASH_JAR $service -f "$config" -l "$logfile" -p "$pluginpath" "$verbose" 2>&1 >> $logfile &
     rs=$?
     [ $rs -eq 0 -a "x$pidfile" != "x" ] && printf '%d' $! > "$pidfile"
   fi
@@ -91,6 +91,14 @@ do
                         ;;
        -l | --logfile )
                         logfile="$2"
+                        shift 2
+                        ;;
+       -v | --verbose )
+                        if [ "$2" == "debug" ]; then
+                            verbose="-vv"
+                        elif [ "$2" == "info" ]; then
+                            verbose="-v"
+                        fi
                         shift 2
                         ;;
           -h | --help )
