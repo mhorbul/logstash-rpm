@@ -13,7 +13,7 @@ else
     JAVA=`which java`
 fi
 
-LOGSTASH_JAR=$(find "$LOGSTASH_HOME" -name 'logstash-*-monolithic.jar' | tail -1)
+LOGSTASH_JAR=$(find "$LOGSTASH_HOME" -name 'logstash-*-flatjar.jar' | tail -1)
 if [ ! -f $LOGSTASH_JAR ]
 then
    echo "jar file is not found."

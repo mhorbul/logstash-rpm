@@ -6,14 +6,14 @@
 %define base_install_dir /opt/%{name}
 
 Name:           logstash
-Version:        1.1.0.1
+Version:        1.1.9
 Release:        1%{?dist}
 Summary:        Logstash is a tool for managing events and logs.
 
 Group:          System Environment/Daemons
 License:        Apache License, Version 2.0
 URL:            http://logstash.net
-Source0:        http://semicomplete.com/files/%{name}/%{name}-%{version}-monolithic.jar
+Source0:        http://semicomplete.com/files/%{name}/%{name}-%{version}-flatjar.jar
 Source1:        logstash.init
 Source2:        logstash.logrotate
 Source3:        logstash.sysconfig
@@ -73,7 +73,7 @@ if ! getent group logstash >/dev/null; then
         groupadd -r logstash
 fi
 
-# create ogstash user
+# create logstash user
 if ! getent passwd logstash >/dev/null; then
         useradd -r -g logstash -d %{base_install_dir} \
             -s /sbin/nologin -c "Logstash" logstash
@@ -114,5 +114,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Jan 11 2013 Aaron Blew <aaronblew@gmail.com> - 1.1.9-1
+- Package update
+- Switched to flatjar version for faster startup
+- Allow overwriting the user/group via sysconfig file
 * Fri May  4 2012 Maksim Horbul <max@gorbul.net> - 1.1.0-1
 - Initial package

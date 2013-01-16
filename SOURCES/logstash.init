@@ -13,11 +13,11 @@
 
 . /etc/rc.d/init.d/functions
 
-[ -f /etc/sysconfig/logstash ] && . /etc/sysconfig/logstash
-
 LOGSTASH_HOME=/opt/logstash
 LOGSTASH_USER=logstash
 DAEMON=${LOGSTASH_HOME}/bin/logstash
+
+[ -f /etc/sysconfig/logstash ] && . /etc/sysconfig/logstash
 
 NAME=$(basename $0)
 SERVICE=agent
