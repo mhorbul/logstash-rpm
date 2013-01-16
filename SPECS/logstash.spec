@@ -118,5 +118,8 @@ rm -rf $RPM_BUILD_ROOT
 - Package update
 - Switched to flatjar version for faster startup
 - Allow overwriting the user/group via sysconfig file
+* Mon Nov  5 2012 Dan Carley <dan.carley@gmail.com> - 1.1.0.1-2
+- Fix variable handling of default log level.
+- Document available log levels.
 * Fri May  4 2012 Maksim Horbul <max@gorbul.net> - 1.1.0-1
 - Initial package
