@@ -7,13 +7,13 @@
 
 Name:           logstash
 Version:        1.1.9
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        Logstash is a tool for managing events and logs.
 
 Group:          System Environment/Daemons
 License:        Apache License, Version 2.0
 URL:            http://logstash.net
-Source0:        http://semicomplete.com/files/%{name}/%{name}-%{version}-flatjar.jar
+Source0:        http://semicomplete.com/files/%{name}/%{name}-%{version}-monolithic.jar
 Source1:        logstash.init
 Source2:        logstash.logrotate
 Source3:        logstash.sysconfig
@@ -114,9 +114,8 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
-* Fri Jan 11 2013 Aaron Blew <aaronblew@gmail.com> - 1.1.9-1
+* Fri Jan 11 2013 Aaron Blew <aaronblew@gmail.com> - 1.1.9-3
 - Package update
-- Switched to flatjar version for faster startup
 - Allow overwriting the user/group via sysconfig file
 * Mon Nov  5 2012 Dan Carley <dan.carley@gmail.com> - 1.1.0.1-2
 - Fix variable handling of default log level.
