@@ -16,7 +16,7 @@
 [ -f /etc/sysconfig/logstash ] && . /etc/sysconfig/logstash
 
 LOGSTASH_HOME=/opt/logstash
-LOGSTASH_USER=logstash
+LOGSTASH_USER=${LOGSTASH_USER:-logstash}
 DAEMON=${LOGSTASH_HOME}/bin/logstash
 
 NAME=$(basename $0)
