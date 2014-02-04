@@ -1,0 +1,7 @@
+This should include all the bits necessary to build distributable RPMs of the the logstash project (http//logstash.net) suitable for use on RHEL/CentOS/SL machines.
+
+Much of the work herein has been done by Max Horbul (https://github.com/mhorbul).
+Contributors:
+  Aaron Blew (http://github.com/blewa)
+    - Minor init script work to allow the daemon to run as a user configued in /etc/sysconfig/logstash 
+    - Updated for 1.1.9

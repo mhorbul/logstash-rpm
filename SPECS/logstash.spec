@@ -6,8 +6,8 @@
 %define base_install_dir /opt/%{name}
 
 Name:           logstash
-Version:        1.1.0.1
-Release:        1%{?dist}
+Version:        1.1.9
+Release:        3%{?dist}
 Summary:        Logstash is a tool for managing events and logs.
 
 Group:          System Environment/Daemons
@@ -73,7 +73,7 @@ if ! getent group logstash >/dev/null; then
         groupadd -r logstash
 fi
 
-# create ogstash user
+# create logstash user
 if ! getent passwd logstash >/dev/null; then
         useradd -r -g logstash -d %{base_install_dir} \
             -s /sbin/nologin -c "Logstash" logstash
@@ -114,5 +114,11 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Jan 11 2013 Aaron Blew <aaronblew@gmail.com> - 1.1.9-3
+- Package update
+- Allow overwriting the user/group via sysconfig file
+* Mon Nov  5 2012 Dan Carley <dan.carley@gmail.com> - 1.1.0.1-2
+- Fix variable handling of default log level.
+- Document available log levels.
 * Fri May  4 2012 Maksim Horbul <max@gorbul.net> - 1.1.0-1
 - Initial package
