@@ -7,7 +7,7 @@
 
 Name:           logstash
 Version:        1.1.0.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Logstash is a tool for managing events and logs.
 
 Group:          System Environment/Daemons
@@ -114,5 +114,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Nov  5 2012 Dan Carley <dan.carley@gmail.com> - 1.1.0.1-2
+- Fix variable handling of default log level.
+- Document available log levels.
+
 * Fri May  4 2012 Maksim Horbul <max@gorbul.net> - 1.1.0-1
 - Initial package
